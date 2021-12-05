@@ -94,7 +94,7 @@ def main(url, base, num_pages, n_jobs):
     all_idx = np.array([i for i in range(start_idx, start_idx+num_pages)])
     segmented_idx = np.array_split(all_idx, n_jobs)
 
-    info_dicts_list = Parallel(n_jobs=n_jobs)(delayed(get_all_articles)(base, idx) for idx in tqdm(segmented_idx))
+    info_dicts_list = Parallel(n_jobs=n_jobs)(delayed(get_all_articles)(base, idx) for idx in)
 
     info_dicts = {}
     for dic in info_dicts_list:
